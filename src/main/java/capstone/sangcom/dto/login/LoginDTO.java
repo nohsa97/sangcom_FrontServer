@@ -1,4 +1,4 @@
-package capstone.sangcom.dto;
+package capstone.sangcom.dto.login;
 
 import lombok.Data;
 

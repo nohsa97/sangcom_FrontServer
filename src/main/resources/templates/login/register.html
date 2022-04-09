@@ -19,7 +19,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-blue bg-white">
             <div class="container px-lg-5">
-                <a class="navbar-brand" href="index.html">SangCom</a>
+                <a class="navbar-brand" href="http://localhost:8080">SangCom</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -34,7 +34,7 @@
         <header class="py-5">
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                  <form action="index.html" method="post">
+                    <form action="" method="post">
                         <h1 class="display-5 fw-bold">회원가입</h1>   <br>
                         <label for="id">아이디</label>
                         <input type="text" name = "id" id ="id" placeholder="아이디" onchange='checkID()'>
@@ -44,7 +44,8 @@
                         <input type="password" name = "password" id ="password" placeholder="비밀번호" ><br>
 
                         <label for="passwordCheck">비밀번호 확인</label>
-                        <input type="password" name = "passwordCheck" id ="passwordCheck" placeholder="재입력" ><br>
+                        <input type="password" id ="passwordCheck" placeholder="재입력" ><br>
+
 
                         <label for="name">이름</label>
                         <input type="text" name = "name" id ="name" placeholder="이름" ><br>
@@ -53,21 +54,21 @@
                         <input type="date" name = "birth" id ="birth" placeholder="생년월일 8자리 ex)20210101" ><br>
 
                         <select class="" name="schoolgrade">
-                          <option value="none">학년</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
+                        <option value="none">학년</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                         </select>
 
                         <select class="" name="schoolclass">
-                          <option value="none">반</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
+                        <option value="none">반</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
                         </select>
                         번호
                         <input type="text" name = "schoolnumber" id ="schoolnumber"  placeholder="번호"  style="width:40px"><br>
@@ -81,19 +82,22 @@
                         <label for="email">이메일</label>
                         <input type="text" name = "email" id ="email" placeholder="ex) example@example.com" style="width : 210px" ><br><br>
 
-                        <input id="checkbox" type="checkbox" name="admit" value="admit" onclick = "finish()" disabled="true" >
+                        역할
+                        <select class="" name="role">
+                        <option value="master">master</option>
+                        <option value="teacher">teacher</option>
+                        <option value="student">student</option>
+                        </select><br/>
+
+                        <input id="checkbox" type="checkbox" name="admit" value="admit" onclick = "finish()" >
                         개인 정보 제3자 제공에 동의합니다.
                         <p>
-                          개인정보 관련 문
+                        개인정보 관련 문
                         </p>
-
-
-
-
 
                         <input id="register_finish" type="submit" disabled='true' name="sumbit" onclick="check()" value="회원가입 하기">
 
-                  </form>
+                    </form>
                 </div>
             </div>
         </header>
