@@ -1,4 +1,4 @@
-package capstone.sangcom.service;
+package capstone.sangcom.response.login;
 
 import lombok.Data;
 
@@ -10,6 +10,7 @@ public class LoginResponse{
 
     public LoginResponse(){}
 
+    @Data
     public static class Token{
         private String access_token;
         private String refresh_token;
