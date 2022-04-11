@@ -3,9 +3,12 @@ package capstone.sangcom.service;
 import capstone.sangcom.dto.login.FindPasswordDTO;
 import capstone.sangcom.dto.login.LoginDTO;
 import capstone.sangcom.dto.login.RegisterDTO;
+import capstone.sangcom.request.login.RefreshRequest;
 import capstone.sangcom.response.login.LoginResponse;
 import capstone.sangcom.response.login.SuccessResponse;
+import capstone.sangcom.response.login.TokenResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONException;
 import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
@@ -63,7 +66,7 @@ public class LoginServiceImpl implements LoginService{
         RequestEntity<Void> requestEntity = RequestEntity
                 .get(uri)
                 .accept(MediaType.APPLICATION_JSON)
-                .header("authorization",refresh)
+                .header("authorization",access)
                 .build();
 
         log.info("sending");
@@ -112,6 +115,7 @@ public class LoginServiceImpl implements LoginService{
                 .post(uri)
                 .contentType(MediaType.APPLICATION_JSON)
                 .header("authorization","null")
+                .accept(MediaType.APPLICATION_JSON)
                 .body(registerDTO);
 
         log.info("sending");
@@ -121,6 +125,30 @@ public class LoginServiceImpl implements LoginService{
         System.out.println(response.getBody().isSuccess());
 
         return response.getBody().isSuccess();
+    }
+
+    @Override
+    public String getAccessToken(String refresh) throws JSONException {
+        URI uri = UriComponentsBuilder
+                .fromUriString("http://localhost:3000")
+                .path("/api/auth/refresh")
+                .encode()
+                .build()
+                .toUri();
+
+        log.info(String.valueOf(uri));
+
+        RequestEntity<RefreshRequest> requestEntity = RequestEntity
+                .post(uri)
+                .contentType(MediaType.APPLICATION_JSON)
+                .header("authorization","null")
+                .body(new RefreshRequest(refresh));
+
+        log.info("sending");
+        //헤더를 함께 보낼때는 exchange메서드를 사용한다 파라미터 1 요청정보들이 들어있는 entity, 2 응답받을 타입
+        ResponseEntity<TokenResponse> response = restTemplate.exchange(requestEntity, TokenResponse.class);
+
+        return response.getBody().getAccess_token();
     }
 
 }

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class LoginController {
 
-    private static final int ACCESS_TOKEN_MAX_AGE = 60 * 60 * 2;
+    public static final int ACCESS_TOKEN_MAX_AGE = 60 * 60 * 2;
     private static final int REFRESH_TOKEN_MAX_AGE = 60 * 60 * 24 * 14;
 
     private LoginService loginService;
