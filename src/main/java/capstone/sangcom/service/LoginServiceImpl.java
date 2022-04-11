@@ -115,7 +115,6 @@ public class LoginServiceImpl implements LoginService{
                 .post(uri)
                 .contentType(MediaType.APPLICATION_JSON)
                 .header("authorization","null")
-                .accept(MediaType.APPLICATION_JSON)
                 .body(registerDTO);
 
         log.info("sending");

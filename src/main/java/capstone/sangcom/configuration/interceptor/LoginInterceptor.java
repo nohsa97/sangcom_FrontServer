@@ -44,7 +44,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             refresh = stk.nextToken();
 
             boolean flag = loginService.checkLogin(access, refresh);
-            System.out.println(flag);
+            log.info(String.valueOf(flag));
             if(flag)
                 return true;
             else{
