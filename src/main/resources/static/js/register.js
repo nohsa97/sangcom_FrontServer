@@ -119,11 +119,3 @@ function check(){
 
   }
 }
-
-
-
-
-
-
- 
-//출처: https://yeonvley.tistory.com/13 [코딩하는 이쁘니] 

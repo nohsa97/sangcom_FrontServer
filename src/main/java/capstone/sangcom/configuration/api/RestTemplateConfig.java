@@ -1,4 +1,4 @@
-package capstone.sangcom.configuration;
+package capstone.sangcom.configuration.api;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;

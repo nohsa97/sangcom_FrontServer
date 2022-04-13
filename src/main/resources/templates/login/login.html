@@ -24,12 +24,12 @@
         <!-- 맨위 상단바 nav  -->
         <nav class="navbar navbar-expand-lg navbar-blue bg-white">
             <div class="container px-lg-5">
-                <a class="navbar-brand" href="index.html" >SangCom</a>
+                <a class="navbar-brand" href="http://localhost:8080" >SangCom</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/HTML/login/register.html">회원가입</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/HTML/login/findPW.html">비밀번호 찾기</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/register">회원가입</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/find/password">비밀번호 찾기</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,10 +47,10 @@
                   <h1>SangCom</h1><br>
                   <!-- 로그인 -->
                   
-                  <form action="http://220.149.31.104:3000/api/user/login" id="loginForm" method="post">
-                     <label for="member_ID" >ID</label>
+                  <form action="/login" id="loginForm" method="post">
+                     <label for="id" >ID</label>
                      <input class="loginbord" type="text" name = "id" id ="id" placeholder="ID입력" value="" required autocomplete="off"><br>
-                     <label for="member_password" >PW</label>
+                     <label for="password" >PW</label>
                      <input class="loginbord" type="password" name = "password" id ="password" placeholder="PW입력" value="" required autocomplete="off">
                      
                      <div style="margin: 10px;">
@@ -70,10 +70,10 @@
                       </div> -->
                   <!--아래 회원가입 , idpw찾기 버튼.-->
                   <div style="margin: 5px;">
-                      <a href="register.html" target="_blank">
+                      <a href="/register">
                       <input class="material-icons btn btnsmall" type="button" name="register" value="how_to_reg 회원가입">
                       </a>
-                      <a href="findPW.html" target="_blank">
+                      <a href="/find/password">
                       <input class="material-icons btn btnsmall list" style="font-size: 13px !important;" type="button" name="register" value="policy ID/비밀번호 찾기">
                       </a>
                   </div>
