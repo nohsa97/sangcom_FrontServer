@@ -30,6 +30,4 @@ public class FindUserInfoController {
         else
             return "login/findPW";
     }
-
-
 }

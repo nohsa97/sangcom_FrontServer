@@ -8,5 +8,4 @@ public class FindPasswordDTO {
     private final String id;
     private final String name;
     private final String studentId;
-
 }

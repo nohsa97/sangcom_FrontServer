@@ -1,4 +1,4 @@
-package capstone.sangcom.configuration;
+package capstone.sangcom.configuration.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;

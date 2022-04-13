@@ -6,11 +6,11 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class InterceptorConfig implements WebMvcConfigurer {
+public class LoginCheckInterceptorConfig implements WebMvcConfigurer {
 
     private LoginInterceptor loginInterceptor;
 
-    public InterceptorConfig(LoginInterceptor loginInterceptor){
+    public LoginCheckInterceptorConfig(LoginInterceptor loginInterceptor){
         this.loginInterceptor = loginInterceptor;
     }
 
@@ -18,7 +18,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(loginInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/login", "/register", "find/pw", "find/id")
+                .excludePathPatterns("/login", "/register", "/find/**")
                 .excludePathPatterns("/js/**", "/css/**", "/image/**", "/icon/**")
                 .order(1);
     }
