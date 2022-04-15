@@ -28,8 +28,6 @@ public class ApiTemplate {
                 .build()
                 .toUri();
 
-        log.info("GET {}",String.valueOf(uri));
-
         RequestEntity<Void> requestEntity = RequestEntity
                 .get(uri)
                 .accept(MediaType.APPLICATION_JSON)
@@ -48,8 +46,6 @@ public class ApiTemplate {
                 .path("/api" + detailUri)
                 .build()
                 .toUri();
-
-        log.info("POST {}",String.valueOf(uri));
 
         RequestEntity<Q> requestEntity = RequestEntity
                 .post(uri)
