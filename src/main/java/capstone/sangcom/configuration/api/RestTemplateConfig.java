@@ -16,7 +16,7 @@ import java.time.Duration;
 @Configuration
 public class RestTemplateConfig {
 
-    private ResponseErrorHandler responseErrorHandler;
+    private final ResponseErrorHandler responseErrorHandler;
 
     public RestTemplateConfig(ResponseErrorHandler responseErrorHandler){
         this.responseErrorHandler = responseErrorHandler;
@@ -32,6 +32,5 @@ public class RestTemplateConfig {
                 .additionalMessageConverters(new StringHttpMessageConverter(Charset.forName("UTF-8")))
                 .additionalMessageConverters(new MappingJackson2HttpMessageConverter())
                 .build();
-
     }
 }

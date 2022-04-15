@@ -1,4 +1,4 @@
-package capstone.sangcom.response.login;
+package capstone.sangcom.response.common;
 
 import lombok.Data;
 
