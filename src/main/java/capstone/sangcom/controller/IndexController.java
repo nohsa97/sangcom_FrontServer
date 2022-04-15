@@ -1,17 +1,16 @@
 package capstone.sangcom.controller;
 
-import capstone.sangcom.service.LoginService;
+import capstone.sangcom.service.login.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class IndexController {
 
-    private LoginService loginService;
+    private final LoginService loginService;
 
     public IndexController(LoginService loginService){
         this.loginService = loginService;

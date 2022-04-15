@@ -1,7 +1,7 @@
 package capstone.sangcom.configuration.interceptor;
 
 import capstone.sangcom.controller.login.LoginController;
-import capstone.sangcom.service.LoginService;
+import capstone.sangcom.service.login.LoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -43,11 +43,9 @@ public class LoginInterceptor implements HandlerInterceptor {
             stk.nextToken();
             refresh = stk.nextToken();
 
-            boolean flag = loginService.checkLogin(access, refresh);
-            log.info(String.valueOf(flag));
-            if(flag)
+            if(loginService.checkLogin(access, refresh)) {
                 return true;
-            else{
+            }else{
                 response.sendRedirect("/login");
                 return false;
             }

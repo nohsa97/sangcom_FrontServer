@@ -3,7 +3,7 @@ package capstone.sangcom.controller.login;
 import capstone.sangcom.dto.login.LoginDTO;
 import capstone.sangcom.dto.login.RegisterDTO;
 import capstone.sangcom.response.login.LoginResponse;
-import capstone.sangcom.service.LoginService;
+import capstone.sangcom.service.login.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
